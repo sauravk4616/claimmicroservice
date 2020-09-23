@@ -24,7 +24,7 @@ namespace claimmicroservice.Controllers
         [HttpGet]
         public IEnumerable<memberclaim> Get()//View Bills je by dafault index e or asbe
         {
-            _log4net.Info("claimController get called");
+            //_log4net.Info("claimController get called");
             memberclaimrepo ob = new memberclaimrepo();
             return ob.give();
         }

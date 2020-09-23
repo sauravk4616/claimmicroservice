@@ -32,7 +32,7 @@ namespace claimmicroservice.Repository
         public List<memberclaim> fetchclaimsformember(int id)//here id is the member id
         {
            List<memberclaim> l = new List<memberclaim>();
-            foreach(var item in l)//fetch all the claims for a particular memberid
+            foreach(var item in m)//fetch all the claims for a particular memberid
             {
                 if(item.memberid==id)
                 {
