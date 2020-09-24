@@ -17,14 +17,14 @@ namespace claimmicroservice.Controllers
     public class claimController : ControllerBase
     {
         readonly log4net.ILog _log4net;
-        /// <summary>
-        ///  GET: api/<claimController>
-        /// </summary>
-        /// <returns></returns>
+       
+      
+        
+        // GET: api/<claimController>
         [HttpGet]
         public IEnumerable<memberclaim> Get()//View Bills je by dafault index e or asbe
         {
-            //_log4net.Info("claimController get called");
+            _log4net.Info("claimController get called");
             memberclaimrepo ob = new memberclaimrepo();
             return ob.give();
         }
@@ -38,7 +38,7 @@ namespace claimmicroservice.Controllers
             ob1=ob.fetchclaimsformember(id);
             return ob1;
         }
-
+       
         // POST api/<claimController>
         [HttpPost]
         public string Post([FromBody] memberclaim obj)
@@ -53,6 +53,7 @@ namespace claimmicroservice.Controllers
         // PUT api/<claimController>/5
         public claimController()
         {
+            _log4net = log4net.LogManager.GetLogger(typeof(claimController));
             client = new HttpClient();
             client.BaseAddress = baseAddress;
 
